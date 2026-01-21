@@ -5,24 +5,12 @@
   <title>Data to Impact</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- SEO & Identity -->
-  <meta name="description" content="Research, reports, and academic notes focused on data-driven impact.">
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Data to Impact">
-  <meta property="og:description" content="Research, reports, and academic notes focused on data-driven impact.">
-  <meta property="og:url" content="https://datatoimpact.site/">
-  <meta property="og:image" content="https://datatoimpact.site/assets/images/og-image.png">
-
-  <!-- Twitter / Platforms -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Data to Impact">
-  <meta name="twitter:description" content="Research, reports, and academic notes focused on data-driven impact.">
-  <meta name="twitter:image" content="https://datatoimpact.site/assets/images/og-image.png">
+  <!-- Meta -->
+  <meta name="description" content="Data to Impact is an independent research platform focused on finance, sustainability, and data-driven analysis.">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/logos/favicon.png">
+  <link rel="shortcut icon" href="assets/logos/favicon.png" type="image/png">
 
   <!-- Styles -->
   <link rel="stylesheet" href="style.css">
@@ -33,75 +21,80 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 
-
 <body>
 
-  <header class="nav">
-   <div class="nav-left">
-  <img src="assets/logos/smalllogo.png" alt="Data to Impact" class="nav-logo">
-</div>
+  <!-- ===== Top Utility Bar (IPCC-style) ===== -->
+  <div class="top-bar">
+    <span>Independent research initiative</span>
+  </div>
 
-    <div class="nav-right">
+  <!-- ===== Main Navigation ===== -->
+  <header class="nav">
+    <div class="nav-left">
+      <img src="assets/logos/smalllogo.png" alt="Data to Impact" class="nav-logo">
+      <span class="site-name">Data to Impact</span>
+    </div>
+
+    <nav class="nav-right">
       <a href="about.html">About</a>
       <a href="research.html">Research</a>
       <a href="notes.html">Notes</a>
+      <a href="blog.html">Blog</a>
       <a href="contact.html">Contact</a>
-    </div>
+    </nav>
   </header>
 
+  <!-- ===== Hero (Text-only, IPCC-like) ===== -->
   <main class="hero">
-    <h1>
-      Turning data into<br>
-      <span>meaningful impact</span>
-    </h1>
-    <img src="assets/logos/big_name.png">
+    <h1>The Data to Impact Platform</h1>
 
-    <p>
-      Data to Impact is a research-driven space exploring finance, sustainability,
-      and analytical thinking.  
-      Quiet rigor over noise. Insight over opinion.
+    <p class="hero-subtext">
+      A research-driven platform focused on finance, sustainability,
+      and analytical reasoning for real-world impact.
     </p>
-
-    <div class="hero-actions">
-      <a href="research.html" class="btn primary">Explore Research</a>
-      <a href="notes.html" class="btn secondary">Read Notes</a>
-    </div>
   </main>
 
-  <section class="cards">
-    <div class="card">
-      <h3>Finance</h3>
+  <!-- ===== Content Sections ===== -->
+  <section class="sections">
+
+    <div class="section-block">
+      <h2>Research & Reports</h2>
       <p>
-        Capital structure, financial ratios, working capital cycles,
-        and interpretation beyond surface-level metrics.
+        Working papers, analytical reports, and structured research outputs
+        focused on finance, ESG, and sustainability.
       </p>
+      <a href="research.html">View research →</a>
     </div>
 
-    <div class="card">
-      <h3>Sustainability</h3>
+    <div class="section-block">
+      <h2>Academic Notes</h2>
       <p>
-        ESG frameworks, sustainability reports, and the gap between
-        disclosure and real-world outcomes.
+        Clear, subject-wise notes prepared to support academic learning
+        and simplify complex concepts.
       </p>
+      <a href="notes.html">Browse notes →</a>
     </div>
 
-    <div class="card">
-      <h3>Impact Analysis</h3>
+    <div class="section-block">
+      <h2>Articles & Commentary</h2>
       <p>
-        Translating data into decisions using structured reasoning,
-        not dashboards for decoration.
+        Articles and reflections on data, policy, sustainability,
+        and applied research thinking.
       </p>
+      <a href="blog.html">Read articles →</a>
     </div>
+
   </section>
 
-  <footer>
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <img src="assets/logos/smalllogo.png" alt="Data to Impact" class="footer-logo">
+
     <p>
-      © Data to Impact — Independent research initiative  
-      <br>
+      © Data to Impact — Independent research initiative<br>
       <a href="mailto:harsh@datatoimpact.site">harsh@datatoimpact.site</a>
     </p>
   </footer>
 
-  <script src="script.js"></script>
 </body>
 </html>
