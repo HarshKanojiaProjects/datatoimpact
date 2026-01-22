@@ -1,15 +1,37 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <!--#include file="/partials/head.html" -->
   <meta charset="utf-8">
+  <title>Data To Impact</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/style.css">
 </head>
 
 <body>
-  <!--#include file="/partials/header.html" -->
 
+  <!-- HEADER (inline, replaces old include) -->
+  <header class="header">
+    <div class="container navbar">
+      <div class="brand">
+        <img src="/assets/logo.png" alt="Data To Impact logo">
+        <span class="brand-title">
+          <span class="full">Data To Impact</span>
+          <span class="short">DTI</span>
+        </span>
+      </div>
+
+      <nav class="nav">
+        <a href="/index.html" class="active">Home</a>
+        <a href="/research.html">Research</a>
+        <a href="/notes.html">Notes</a>
+        <a href="/projects.html">Projects</a>
+        <a href="/blogs.html">Blog</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT (unchanged placement) -->
   <main id="main" class="container">
 
     <section class="hero">
@@ -26,32 +48,20 @@
     <section class="grid grid-3">
       <article class="card">
         <h3>Research</h3>
-        <p>
-          Finance analysis and sustainability work, organized for clarity and outcomes.
-        </p>
-        <p>
-          <a href="/research.html">Explore research →</a>
-        </p>
+        <p>Finance analysis and sustainability work, organized for clarity and outcomes.</p>
+        <p><a href="/research.html">Explore research →</a></p>
       </article>
 
       <article class="card">
         <h3>Notes</h3>
-        <p>
-          IIFM notes across FM, SD, DSF, and SM. Quick references and summaries.
-        </p>
-        <p>
-          <a href="/notes.html">Browse notes →</a>
-        </p>
+        <p>IIFM notes across FM, SD, DSF, and SM.</p>
+        <p><a href="/notes.html">Browse notes →</a></p>
       </article>
 
       <article class="card">
         <h3>Projects</h3>
-        <p>
-          Hands-on work applying data to real-world impact. Case studies and tools.
-        </p>
-        <p>
-          <a href="/projects.html">View projects →</a>
-        </p>
+        <p>Hands-on work applying data to real-world impact.</p>
+        <p><a href="/projects.html">View projects →</a></p>
       </article>
     </section>
 
@@ -66,45 +76,46 @@
       <article class="card">
         <h3>Highlights</h3>
         <ul class="mt-2">
-          <li>Blue + green theme, responsive, accessible.</li>
-          <li>Desktop title: Data To Impact; Mobile: DTI.</li>
-          <li>Simple content system using Markdown and JSON.</li>
+          <li>Blue + green theme, responsive.</li>
+          <li>Desktop: Data To Impact, Mobile: DTI.</li>
+          <li>Markdown-based content system.</li>
         </ul>
       </article>
     </section>
 
   </main>
 
-  <!--#include file="/partials/footer.html" -->
+  <!-- FOOTER (inline, replaces old include) -->
+  <footer class="footer">
+    <img src="/assets/logo.png" alt="Data To Impact">
+    <p>© 2026 Data To Impact. Research · Finance · Sustainability</p>
+  </footer>
 
+  <!-- JS (same old placement) -->
   <script src="/assets/js/main.js"></script>
   <script type="module">
-    import { fetchJSON } from '/assets/js/router.js';
-
     async function loadRecent() {
       try {
         const res = await fetch('/content/blogs/index.json');
         const data = await res.json();
         const top = (data || []).slice(0, 3);
 
-        document.getElementById('home-blogs').innerHTML = top.length
-          ? top.map(p => `
-              <div class="mt-2">
-                <a href="/content/blogs/${p.file}" target="_blank" rel="noopener">
-                  ${p.title}
-                </a>
-                <div class="muted">${p.date || ''}</div>
-              </div>
-            `).join('')
-          : '<p class="muted">No posts yet.</p>';
-
+        document.getElementById('home-blogs').innerHTML =
+          top.map(p => `
+            <div class="mt-2">
+              <a href="/content/blogs/${p.file}" target="_blank" rel="noopener">
+                ${p.title}
+              </a>
+              <div class="muted">${p.date || ''}</div>
+            </div>
+          `).join('');
       } catch {
         document.getElementById('home-blogs').innerHTML =
           '<p class="muted">No posts yet.</p>';
       }
     }
-
     loadRecent();
   </script>
+
 </body>
 </html>
